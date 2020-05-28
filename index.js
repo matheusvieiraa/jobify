@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const path = require('path')
 
 const sqlite = require('sqlite')
 const sqlite3 = require('sqlite3')
 const dbConnection = sqlite.open({
-    filename: './banco.db',
+    filename: path.resolve(__dirname, './banco.db'),
     driver: sqlite3.Database
 }, { Promise })
 
